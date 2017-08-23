@@ -1,1 +1,1 @@
-# quickstart-quickstart-sophos-outboundproxy
+# quickstart-sophos-outboundproxy
