@@ -7,9 +7,5 @@ This solution utilizes the Sophos UTM virtual appliance to provide a transparent
 
 AWS EC2 instances often require access to external resources such as software repositories and web services. Many organizations require restricting connections to the Internet to authorized web sites. Web filtering proxies are commonly used to enforce web policies for Internet access.
 
-### High Level Diagram
-![](images/high-level-diagram.png)
-
-
-### Detailed Diagram
+### Solution Diagram
 ![](images/detailed-diagram.png)
