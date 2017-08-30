@@ -68,7 +68,7 @@
                     "ParameterKey": "ApplicationVPCRange"
                 }, 
                 {
-                    "ParameterValue": "bootcamp1", 
+                    "ParameterValue": "sophos", 
                     "ParameterKey": "awsKeyName"
                 }, 
                 {
