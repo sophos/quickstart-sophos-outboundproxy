@@ -4,7 +4,7 @@
                     "ParameterKey": "optionalLicensePool"
                 }, 
                 {
-                    "ParameterValue": "c4.large", 
+                    "ParameterValue": "m3.large", 
                     "ParameterKey": "OGWInstanceSize"
                 }, 
                 {
