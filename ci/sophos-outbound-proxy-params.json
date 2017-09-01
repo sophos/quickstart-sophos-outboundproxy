@@ -68,7 +68,7 @@
                     "ParameterKey": "ApplicationVPCRange"
                 }, 
                 {
-                    "ParameterValue": "sophos", 
+                    "ParameterValue": "cikey", 
                     "ParameterKey": "awsKeyName"
                 }, 
                 {
@@ -98,5 +98,13 @@
                 {
                     "ParameterValue": "10.100.101.0/24", 
                     "ParameterKey": "ApplicationPrivateSubnet1"
+                },
+                {
+                    "ParameterKey": "QSS3BucketName",
+                    "ParameterValue": "atomic-templates"
+                },
+                {
+                    "ParameterKey": "QSS3KeyPrefix",
+                    "ParameterValue": "sophos/outboundproxy/latest/"
                 }
-            ]
+]
