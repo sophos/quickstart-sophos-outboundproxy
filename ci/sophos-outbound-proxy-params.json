@@ -1,0 +1,102 @@
+[
+                {
+                    "ParameterValue": "", 
+                    "ParameterKey": "optionalLicensePool"
+                }, 
+                {
+                    "ParameterValue": "c4.large", 
+                    "ParameterKey": "OGWInstanceSize"
+                }, 
+                {
+                    "ParameterValue": "queen", 
+                    "ParameterKey": "basicHostname"
+                }, 
+                {
+                    "ParameterValue": "autodetect", 
+                    "ParameterKey": "awsAMI"
+                }, 
+                {
+                    "ParameterValue": "$[taskcat_genpass_8A]", 
+                    "ParameterKey": "basicAdminPassword"
+                }, 
+                {
+                    "ParameterValue": "springville", 
+                    "ParameterKey": "basicCity"
+                }, 
+                {
+                    "ParameterValue": "0.0.0.0/0", 
+                    "ParameterKey": "awsTrustedNetwork"
+                }, 
+                {
+                    "ParameterValue": "alex.tomic@gmail.com", 
+                    "ParameterKey": "basicAdminEmail"
+                }, 
+                {
+                    "ParameterValue": "", 
+                    "ParameterKey": "optionalExistingElasticIP"
+                }, 
+                {
+                    "ParameterValue": "acme", 
+                    "ParameterKey": "basicOrganization"
+                }, 
+                {
+                    "ParameterValue": "", 
+                    "ParameterKey": "optionalExistingS3Bucket"
+                }, 
+                {
+                    "ParameterValue": "United States", 
+                    "ParameterKey": "basicCountry"
+                }, 
+                {
+                    "ParameterValue": "default", 
+                    "ParameterKey": "utmControllerInstanceSize"
+                }, 
+                {
+                    "ParameterValue": "10.100.2.0/24", 
+                    "ParameterKey": "ApplicationPublicSubnet2"
+                }, 
+                {
+                    "ParameterValue": "10.100.1.0/24", 
+                    "ParameterKey": "ApplicationPublicSubnet1"
+                }, 
+                {
+                    "ParameterValue": "$[taskcat_genaz_2]", 
+                    "ParameterKey": "AvailabilityZones"
+                }, 
+                {
+                    "ParameterValue": "10.100.0.0/16", 
+                    "ParameterKey": "ApplicationVPCRange"
+                }, 
+                {
+                    "ParameterValue": "sophos", 
+                    "ParameterKey": "awsKeyName"
+                }, 
+                {
+                    "ParameterValue": "BYOL", 
+                    "ParameterKey": "awsLicenseType"
+                }, 
+                {
+                    "ParameterValue": "10.15", 
+                    "ParameterKey": "awsNetworkPrefix"
+                }, 
+                {
+                    "ParameterValue": "default", 
+                    "ParameterKey": "utmWorkerInstanceSize"
+                }, 
+                {
+                    "ParameterValue": "$[taskcat_genpass_8A]", 
+                    "ParameterKey": "AuthToken"
+                }, 
+                {
+                    "ParameterValue": "10.100.102.0/24", 
+                    "ParameterKey": "ApplicationPrivateSubnet2"
+                }, 
+                {
+                    "ParameterValue": "off", 
+                    "ParameterKey": "debugMode"
+                }, 
+                {
+                    "ParameterValue": "10.100.101.0/24", 
+                    "ParameterKey": "ApplicationPrivateSubnet1"
+                }
+            ]
