@@ -41,13 +41,35 @@ Parameters:
     AllowedPattern: ^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(/([0-9]|[1-2][0-9]|3[0-2]))$
     ConstraintDescription: 'Must be IPv4 CIDR notation: X.X.X.X/X'
   OGWInstanceSize:
-    Description: EC2 instance type for OGWs, outbound Gateways launched in application VPCs
     Type: String
+    AllowedValues: 
+      - c4.large
+      - c4.xlarge
+      - c4.2xlarge
+      - c4.4xlarge
+      - c4.8xlarge
+      - c3.large
+      - c3.xlarge
+      - c3.2xlarge
+      - c3.4xlarge
+      - c3.8xlarge
+      - m4.large
+      - m4.xlarge
+      - m4.2xlarge
+      - m4.4xlarge
+      - m4.10xlarge
+      - m4.16xlarge
     Default: c4.large
+    Description: EC2 instance type for OGWs, outbound Gateways launched in application VPCs.  Default is c4.large.  Valid values c4.large and higher, c3.large and higher, m4.large and higher.
   AuthToken:
-    Description: AuthToken for API access. This token would be used as a shared secret for API communication between Outbound Gateways and the UTMs.
+    Description: AuthToken for API access. This token would be used as a shared secret for API 
+      communication between Outbound Gateways and the UTMs.  Alphunumeric value, 8 characters miniumum.  
     Type: String
     NoEcho: 'True'
+    MinLength: 8
+    MaxLength: 64
+    AllowedPattern: ^[a-zA-Z0-9]*$
+    ConstraintDescription: can contain only alphanumeric characters, min. 8 characters.
   awsAMI:
     Description: Autodetect uses the latest AMI based on the pricing option you select.
       Otherwise, specify an AMI ID.
@@ -62,15 +84,51 @@ Parameters:
       - BYOL
     Default: Hourly
   utmControllerInstanceSize:
-    Description: The default EC2 instance type is m4.large. If m4.large is not available
+    Description: The default EC2 instance type is c4.large. If c4.large is not available
       in your region, a similar EC2 instance type will be used.
     Type: String
-    Default: default
+    AllowedValues:
+      - default 
+      - c4.large
+      - c4.xlarge
+      - c4.2xlarge
+      - c4.4xlarge
+      - c4.8xlarge
+      - c3.large
+      - c3.xlarge
+      - c3.2xlarge
+      - c3.4xlarge
+      - c3.8xlarge
+      - m4.large
+      - m4.xlarge
+      - m4.2xlarge
+      - m4.4xlarge
+      - m4.10xlarge
+      - m4.16xlarge
+    Default: default 
   utmWorkerInstanceSize:
     Description: The default EC2 instance type is c4.large. If c4.large is not available
       in your region, a similar EC2 instance type will be used.
     Type: String
-    Default: default
+    AllowedValues:
+      - default 
+      - c4.large
+      - c4.xlarge
+      - c4.2xlarge
+      - c4.4xlarge
+      - c4.8xlarge
+      - c3.large
+      - c3.xlarge
+      - c3.2xlarge
+      - c3.4xlarge
+      - c3.8xlarge
+      - m4.large
+      - m4.xlarge
+      - m4.2xlarge
+      - m4.4xlarge
+      - m4.10xlarge
+      - m4.16xlarge
+    Default: default 
   AvailabilityZones:
     Type: List<AWS::EC2::AvailabilityZone::Name>
     Description: Provide exactly TWO Availability Zones
@@ -115,16 +173,37 @@ Parameters:
       or a number (max. 64 characters).
   basicAdminEmail:
     Description: The email address is only used for UTM administrative purposes.
-    Default: ''
     Type: String
+    AllowedPattern: ^(?:[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$
+    ConstraintDescription: Must be a valid email address.
   basicAdminPassword:
+    Description: Minimum 8 characters
     Type: String
     NoEcho: 'True'
+    MinLength: 8
+    MaxLength: 64
+    AllowedPattern: ^[-_! a-zA-Z0-9]*$
+    ConstraintDescription: can contain only alphanumeric characters, spaces, dashes, exclamations and underscores (min. 8 characters).
   basicOrganization:
+    Description: Required for Sophos UTM licensing
     Type: String
+    AllowedPattern: ^[0-9A-Za-z]{1}([A-Za-z0-9.-]*)$
+    MinLength: 1
+    MaxLength: 64
+    ConstraintDescription: Can only contain lower and
+      uppercase letters, numbers, dots(.), dashes(-) and needs to begin with a letter
+      or a number (max. 64 characters).  
   basicCity:
+    Description: Required for Sophos UTM licensing
     Type: String
+    AllowedPattern: ^[0-9A-Za-z]{1}([A-Za-z0-9.-]*)$
+    MinLength: 1
+    MaxLength: 64
+    ConstraintDescription: Can only contain lower and
+      uppercase letters, numbers, dots(.), dashes(-) and needs to begin with a letter
+      or a number (max. 64 characters). 
   basicCountry:
+    Description: Required for Sophos UTM licensing
     Type: String
     AllowedValues:
       - Andorra
@@ -375,9 +454,9 @@ Parameters:
       - Zambia
       - Zimbabwe
   awsKeyName:
+    Description: All EC2 instances will use this keypair for SSH access
     Description: Name of an existing EC2 KeyPair to enable SSH access.
     Type: AWS::EC2::KeyPair::KeyName
-    Default: ''
   debugMode:
     Description: Enable debug logging on the UTM instances ("off" to disable; "on"
       to enable)
