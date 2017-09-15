@@ -566,7 +566,7 @@ Mappings:
       Hourly: ami-dec3deb9
       BYOL: ami-fcc1dc9b
       ARN: aws
-      QueenInstanceType: m4.large
+      QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     ap-northeast-2:
       AmazonAMI: ami-e21cc38c
@@ -574,7 +574,7 @@ Mappings:
       Hourly: ami-e067b88e
       BYOL: ami-6a65ba04
       ARN: aws
-      QueenInstanceType: m4.large
+      QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     ap-south-1:
       AmazonAMI: ami-47205e28
@@ -582,7 +582,7 @@ Mappings:
       Hourly: ami-2cf88643
       BYOL: ami-22f6884d
       ARN: aws
-      QueenInstanceType: m4.large
+      QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     ap-southeast-1:
       AmazonAMI: ami-77af2014
@@ -590,7 +590,7 @@ Mappings:
       Hourly: ami-3c9b105f
       BYOL: ami-f0850e93
       ARN: aws
-      QueenInstanceType: m4.large
+      QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     ap-southeast-2:
       AmazonAMI: ami-10918173
@@ -598,7 +598,7 @@ Mappings:
       Hourly: ami-0a7d6f69
       BYOL: ami-ab7f6dc8
       ARN: aws
-      QueenInstanceType: m4.large
+      QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     ca-central-1:
       AmazonAMI: ami-a7aa15c3
@@ -606,7 +606,7 @@ Mappings:
       Hourly: ami-948738f0
       BYOL: ami-dd853ab9
       ARN: aws
-      QueenInstanceType: m4.large
+      QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     eu-central-1:
       AmazonAMI: ami-82be18ed
@@ -614,7 +614,7 @@ Mappings:
       Hourly: ami-6fed4d00
       BYOL: ami-71ec4c1e
       ARN: aws
-      QueenInstanceType: m4.large
+      QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     eu-west-1:
       AmazonAMI: ami-d7b9a2b1
@@ -622,7 +622,7 @@ Mappings:
       Hourly: ami-51896f28
       BYOL: ami-818a6cf8
       ARN: aws
-      QueenInstanceType: m4.large
+      QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     eu-west-2:
       AmazonAMI: ami-ed100689
@@ -630,7 +630,7 @@ Mappings:
       Hourly: ami-4bd1c72f
       BYOL: ami-4ad1c72e
       ARN: aws
-      QueenInstanceType: m4.large
+      QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     sa-east-1:
       AmazonAMI: ami-87dab1eb
@@ -646,7 +646,7 @@ Mappings:
       BYOL: ami-e582bbf3
       OGWAMI: ami-bd889cab
       ARN: aws
-      QueenInstanceType: m4.large
+      QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     us-east-2:
       AmazonAMI: ami-8a7859ef
@@ -654,7 +654,7 @@ Mappings:
       Hourly: ami-e60d2c83
       BYOL: ami-a10c2dc4
       ARN: aws
-      QueenInstanceType: m4.large
+      QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     us-gov-west-1:
       AmazonAMI: ami-899412e8
@@ -662,7 +662,7 @@ Mappings:
       Hourly: ami-b35adcd2
       BYOL: ami-b35adcd2
       ARN: aws-us-gov
-      QueenInstanceType: m4.large
+      QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     us-west-1:
       AmazonAMI: ami-327f5352
@@ -670,7 +670,7 @@ Mappings:
       Hourly: ami-915f70f1
       BYOL: ami-4c5f702c
       ARN: aws
-      QueenInstanceType: m4.large
+      QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     us-west-2:
       AmazonAMI: ami-6df1e514
@@ -678,7 +678,7 @@ Mappings:
       Hourly: ami-b10b1bc8
       BYOL: ami-6e091917
       ARN: aws
-      QueenInstanceType: m4.large
+      QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
 
 Conditions:
@@ -921,6 +921,8 @@ Resources:
           Value: !Ref 'AWS::StackId'
         - Key: Network
           Value: Public
+        - Key: Name
+          Value: SecurityVPC Queen Route Table
   QueenSubnet1RouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
@@ -940,6 +942,8 @@ Resources:
           Value: !Ref 'AWS::StackId'
         - Key: Network
           Value: Public
+        - Key: Name
+          Value: !Sub SecurityVPC Swarm Route Table          
   SwarmRoute:
     Type: AWS::EC2::Route
     DependsOn: AttachGateway
