@@ -16,7 +16,7 @@
                     "ParameterKey": "awsAMI"
                 }, 
                 {
-                    "ParameterValue": "$[alfred_genpass_8]", 
+                    "ParameterValue": "$[taskcat_genpass_8A]", 
                     "ParameterKey": "basicAdminPassword"
                 }, 
                 {
@@ -24,7 +24,7 @@
                     "ParameterKey": "basicCity"
                 }, 
                 {
-                    "ParameterValue": "52.39.77.198/32", 
+                    "ParameterValue": "0.0.0.0/0", 
                     "ParameterKey": "awsTrustedNetwork"
                 }, 
                 {
@@ -60,7 +60,7 @@
                     "ParameterKey": "ApplicationPublicSubnet1"
                 }, 
                 {
-                    "ParameterValue": "$[alfred_genaz_2]", 
+                    "ParameterValue": "$[taskcat_genaz_2]", 
                     "ParameterKey": "AvailabilityZones"
                 }, 
                 {
@@ -84,7 +84,7 @@
                     "ParameterKey": "utmWorkerInstanceSize"
                 }, 
                 {
-                    "ParameterValue": "$[alfred_genpass_8]", 
+                    "ParameterValue": "$[taskcat_genpass_8A]", 
                     "ParameterKey": "AuthToken"
                 }, 
                 {
@@ -98,5 +98,13 @@
                 {
                     "ParameterValue": "10.100.101.0/24", 
                     "ParameterKey": "ApplicationPrivateSubnet1"
+                },
+                {
+                    "ParameterKey": "QSS3BucketName",
+                    "ParameterValue": "$[taskcat_autobucket]"
+                },
+                {
+                    "ParameterKey": "QSS3KeyPrefix",
+                    "ParameterValue": "quickstart-sophos-outboundproxy/"
                 }
 ]
