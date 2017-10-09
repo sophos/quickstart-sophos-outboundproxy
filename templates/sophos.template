@@ -521,6 +521,12 @@ Metadata:
           default: Debug Settings
         Parameters:
           - debugMode
+      - Label:
+          default: AWS Quick Start Configuration
+        Parameters:
+          - QSS3BucketName
+          - QSS3KeyPrefix
+
     ParameterLabels:
       awsAMI:
         default: AMI ID (required)
@@ -558,6 +564,25 @@ Metadata:
         default: SSH Key (required)
       debugMode:
         default: Debug Mode
+      OGWInstanceSize:
+        default: Instance Type for Outbound Gateway (OGW - required)
+      AuthToken:
+        default: Authentication Token (required)
+      ApplicationVPCRange:
+        default: CIDR for ApplicationVPC (required)
+      ApplicationPublicSubnet1:
+        default: Public subnet in AZ1 (required)
+      ApplicationPublicSubnet2:
+        default: Public subnet in AZ2 (required)
+      ApplicationPrivateSubnet1:
+        default: Private subnet (Proxy client network 1) in AZ1 (required)
+      ApplicationPrivateSubnet2:
+        default: Private subnet (Proxy client network 2) in AZ2 (required)
+      QSS3BucketName:
+        default: Quick Start S3 Bucket Name
+      QSS3KeyPrefix:
+        default: Quick Start S3 Key Prefix
+
 Mappings:
   RegionMap:
     ap-northeast-1:
