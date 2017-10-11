@@ -569,7 +569,7 @@ Metadata:
       AuthToken:
         default: Authentication Token (required)
       ApplicationVPCRange:
-        default: CIDR for ApplicationVPC (required)
+        default: CIDR for Application VPC (required)
       ApplicationPublicSubnet1:
         default: Public subnet in AZ1 (required)
       ApplicationPublicSubnet2:
