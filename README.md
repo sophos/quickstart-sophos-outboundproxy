@@ -1,6 +1,6 @@
 ## Sophos Outbound Web Proxy on the AWS Cloud
 
-For additional information and step by step instructions please reference [the quick start guide for this solution](https://docs.aws.amazon.com/quickstart/latest/<guide>/).
+For additional information and step by step instructions please reference [the quick start guide for this solution](https://aws.amazon.com/quickstart/architecture/sophos-outbound-web-proxy/).
 
 ### Overview
 This solution utilizes the Sophos UTM virtual appliance to provide a transparent outbound proxy for EC2 instances deployed in Amazon Virtual Private Cloud (VPC). In addition, it uses a Sophos feature called Outbound Gateway to extend the security of the solution to multiple VPCs.
