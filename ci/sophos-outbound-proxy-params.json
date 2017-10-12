@@ -28,7 +28,7 @@
                     "ParameterKey": "awsTrustedNetwork"
                 }, 
                 {
-                    "ParameterValue": "alex.tomic@gmail.com", 
+                    "ParameterValue": "some.one@somedomain.com", 
                     "ParameterKey": "basicAdminEmail"
                 }, 
                 {
