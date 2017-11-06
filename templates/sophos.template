@@ -42,7 +42,7 @@ Parameters:
     ConstraintDescription: 'Must be IPv4 CIDR notation: X.X.X.X/X'
   OGWInstanceSize:
     Type: String
-    AllowedValues: 
+    AllowedValues:
       - c4.large
       - c4.xlarge
       - c4.2xlarge
@@ -62,8 +62,8 @@ Parameters:
     Default: c4.large
     Description: EC2 instance type for OGWs, outbound Gateways launched in application VPCs.  Default is c4.large.  Valid values c4.large and higher, c3.large and higher, m4.large and higher.
   AuthToken:
-    Description: AuthToken for API access. This token would be used as a shared secret for API 
-      communication between Outbound Gateways and the UTMs.  Alphunumeric value, 8 characters miniumum.  
+    Description: AuthToken for API access. This token would be used as a shared secret for API
+      communication between Outbound Gateways and the UTMs.  Alphunumeric value, 8 characters miniumum.
     Type: String
     NoEcho: 'True'
     MinLength: 8
@@ -88,7 +88,7 @@ Parameters:
       in your region, a similar EC2 instance type will be used.
     Type: String
     AllowedValues:
-      - default 
+      - default
       - c4.large
       - c4.xlarge
       - c4.2xlarge
@@ -105,13 +105,13 @@ Parameters:
       - m4.4xlarge
       - m4.10xlarge
       - m4.16xlarge
-    Default: default 
+    Default: default
   utmWorkerInstanceSize:
     Description: The default EC2 instance type is c4.large. If c4.large is not available
       in your region, a similar EC2 instance type will be used.
     Type: String
     AllowedValues:
-      - default 
+      - default
       - c4.large
       - c4.xlarge
       - c4.2xlarge
@@ -128,7 +128,7 @@ Parameters:
       - m4.4xlarge
       - m4.10xlarge
       - m4.16xlarge
-    Default: default 
+    Default: default
   AvailabilityZones:
     Type: List<AWS::EC2::AvailabilityZone::Name>
     Description: Provide exactly TWO Availability Zones
@@ -192,7 +192,7 @@ Parameters:
     MaxLength: 64
     ConstraintDescription: Can only contain lower and
       uppercase letters, numbers, dots(.), dashes(-) and needs to begin with a letter
-      or a number (max. 64 characters).  
+      or a number (max. 64 characters).
   basicCity:
     Description: Required for Sophos UTM licensing
     Type: String
@@ -201,7 +201,7 @@ Parameters:
     MaxLength: 64
     ConstraintDescription: Can only contain lower and
       uppercase letters, numbers, dots(.), dashes(-) and needs to begin with a letter
-      or a number (max. 64 characters). 
+      or a number (max. 64 characters).
   basicCountry:
     Description: Required for Sophos UTM licensing
     Type: String
@@ -968,7 +968,7 @@ Resources:
         - Key: Network
           Value: Public
         - Key: Name
-          Value: !Sub SecurityVPC Swarm Route Table          
+          Value: !Sub SecurityVPC Swarm Route Table
   SwarmRoute:
     Type: AWS::EC2::Route
     DependsOn: AttachGateway
@@ -1034,20 +1034,17 @@ Resources:
     Properties:
       GroupDescription: Group for the receivers of the ElasticLoadBalancer
       VpcId: !Ref 'VPC'
+      GroupDescription: Enable TCP access from trusted network
   QueenSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
       GroupDescription: Identifying security group
-      VpcId: !Ref 'VPC'
-      SecurityGroupEgress:
-        - IpProtocol: tcp
-          FromPort: '0'
-          ToPort: '65535'
-          CidrIp: 0.0.0.0/0
+      SecurityGroupIngress:
         - IpProtocol: udp
-          FromPort: '0'
-          ToPort: '65535'
-          CidrIp: 0.0.0.0/0
+          FromPort: '514'
+          ToPort: '514'
+          SourceSecurityGroupId: !Ref SwarmSecurityGroup
+      VpcId: !Ref 'VPC'
   TrustedNetworkGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
@@ -1305,6 +1302,7 @@ Resources:
         - !Ref 'QueenSecurityGroup'
         - !Ref 'TrustedNetworkGroup'
         - !Ref 'UntrustedGroup'
+        - !Ref 'LoadBalancerReceiverSecurityGroup'
       UserData: !Base64
         Fn::Join:
           - ''
@@ -1459,8 +1457,11 @@ Resources:
               group: root
               content: !Join ['', ['elb: ', '
 
-                    ', 'frontend_security_group: ', !Ref 'LoadBalancerReceiverSecurityGroup',
-                  '
+                    ', 'elb_security_group: ', '
+
+                    ', 'elb_destination_security_group: ', !Ref 'LoadBalancerReceiverSecurityGroup', '
+
+                    ', 'frontend_security_group: ', !Ref 'LoadBalancerReceiverSecurityGroup', '
 
                     ', '
 
@@ -1503,15 +1504,7 @@ Resources:
 
                     ', '        to_port: 65535
 
-                    ', '        protocol: TCP
-
-                    ', '        source: 0.0.0.0/0
-
-                    ', '      - from_port: 0
-
-                    ', '        to_port: 65535
-
-                    ', '        protocol: UDP
+                    ', '        protocol: ANY
 
                     ', '        source: 0.0.0.0/0
 
@@ -1519,55 +1512,41 @@ Resources:
 
                     ', '    incoming:
 
-                    ', '      - from_port: 0
+                    ', '      - from_port: 4444
 
-                    ', '        to_port: 65535
+                    ', '        to_port: 4444
 
                     ', '        protocol: TCP
 
                     ', '        source: ', !Ref 'awsTrustedNetwork', '
 
-                    ', '  ', !Ref 'UntrustedGroup', ':
+                    ', '      - from_port: 22
 
-                    ', '    incoming:
+                    ', '        to_port: 22
+
+                    ', '        protocol: TCP
+
+                    ', '        source: ', !Ref 'awsTrustedNetwork', '
+
+                    ', '    outgoing:
 
                     ', '      - from_port: 0
 
-                    ', '        to_port: 21
+                    ', '        to_port: 65535
 
-                    ', '        protocol: TCP
-
-                    ', '        source: 0.0.0.0/0
-
-                    ', '      - from_port: 23
-
-                    ', '        to_port: 4443
-
-                    ', '        protocol: TCP
+                    ', '        protocol: ANY
 
                     ', '        source: 0.0.0.0/0
 
-                    ', '      - from_port: 4445
+                    ', '  ', !Ref 'UntrustedGroup', ':
 
-                    ', '        to_port: 5431
+                    ', '    outgoing:
 
-                    ', '        protocol: TCP
-
-                    ', '        source: 0.0.0.0/0
-
-                    ', '      - from_port: 5433
+                    ', '      - from_port: 0
 
                     ', '        to_port: 65535
 
-                    ', '        protocol: TCP
-
-                    ', '        source: 0.0.0.0/0
-
-                    ', '      - from_port: 3410
-
-                    ', '        to_port: 3410
-
-                    ', '        protocol: UDP
+                    ', '        protocol: ANY
 
                     ', '        source: 0.0.0.0/0
 
