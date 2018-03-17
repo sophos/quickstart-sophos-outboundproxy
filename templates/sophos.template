@@ -586,122 +586,122 @@ Metadata:
 Mappings:
   RegionMap:
     ap-northeast-1:
-      AmazonAMI: ami-3bd3c45c
-      OGWAMI: ami-900febf6
-      Hourly: ami-dec3deb9
-      BYOL: ami-fcc1dc9b
+      AmazonAMI: ami-ceafcba8
+      OGWAMI: ami-e4941682
+      Hourly: ami-73972f15
+      BYOL: ami-47922a21
       ARN: aws
       QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     ap-northeast-2:
-      AmazonAMI: ami-e21cc38c
-      OGWAMI: ami-b025fbde
-      Hourly: ami-e067b88e
-      BYOL: ami-6a65ba04
+      AmazonAMI: ami-863090e8
+      OGWAMI: ami-bd50f6d3
+      Hourly: ami-110daa7f
+      BYOL: ami-9900a7f7
       ARN: aws
       QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     ap-south-1:
-      AmazonAMI: ami-47205e28
-      OGWAMI: ami-54cdb43b
-      Hourly: ami-2cf88643
-      BYOL: ami-22f6884d
+      AmazonAMI: ami-531a4c3c
+      OGWAMI: ami-eabff785
+      Hourly: ami-fbc78994
+      BYOL: ami-fac78995
       ARN: aws
       QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     ap-southeast-1:
-      AmazonAMI: ami-77af2014
-      OGWAMI: ami-59ec7d3a
-      Hourly: ami-3c9b105f
-      BYOL: ami-f0850e93
+      AmazonAMI: ami-68097514
+      OGWAMI: ami-d72a4aab
+      Hourly: ami-db1a48b8
+      BYOL: ami-8c1a48ef
       ARN: aws
       QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     ap-southeast-2:
-      AmazonAMI: ami-10918173
-      OGWAMI: ami-02021e61
-      Hourly: ami-0a7d6f69
-      BYOL: ami-ab7f6dc8
+      AmazonAMI: ami-942dd1f6
+      OGWAMI: ami-38a3555a
+      Hourly: ami-2d36c34f
+      BYOL: ami-8d34c1ef
       ARN: aws
       QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     ca-central-1:
-      AmazonAMI: ami-a7aa15c3
-      OGWAMI: ami-0e43fc6a
-      Hourly: ami-948738f0
-      BYOL: ami-dd853ab9
+      AmazonAMI: ami-a954d1cd
+      OGWAMI: ami-2cbb0148
+      Hourly: ami-3249f256
+      BYOL: ami-6248f306
       ARN: aws
       QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     eu-central-1:
-      AmazonAMI: ami-82be18ed
-      OGWAMI: ami-d251f3bd
-      Hourly: ami-6fed4d00
+      AmazonAMI: ami-5652ce39
+      OGWAMI: ami-e8d45f87
+      Hourly: ami-df79f5b0
       BYOL: ami-71ec4c1e
       ARN: aws
       QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     eu-west-1:
-      AmazonAMI: ami-d7b9a2b1
-      OGWAMI: ami-a85cb0d1
-      Hourly: ami-51896f28
-      BYOL: ami-818a6cf8
+      AmazonAMI: ami-d834aba1
+      OGWAMI: ami-71088d08
+      Hourly: ami-bea113c7
+      BYOL: ami-01a31178
       ARN: aws
       QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     eu-west-2:
-      AmazonAMI: ami-ed100689
-      OGWAMI: ami-72a0b616
-      Hourly: ami-4bd1c72f
-      BYOL: ami-4ad1c72e
+      AmazonAMI: ami-403e2524
+      OGWAMI: ami-a45148c0
+      Hourly: ami-c24658a6
+      BYOL: ami-b14759d5
       ARN: aws
       QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     sa-east-1:
-      AmazonAMI: ami-87dab1eb
-      OGWAMI: ami-c4a0d4a8
-      Hourly: ami-31d2b85d
-      BYOL: ami-cdd0baa1
+      AmazonAMI: ami-84175ae8
+      OGWAMI: ami-b66f29da
+      Hourly: ami-8a85c1e6
+      BYOL: ami-ae84c0c2
       ARN: aws
       QueenInstanceType: m3.large
       SwarmInstanceType: m3.large
     us-east-1:
-      AmazonAMI: ami-a4c7edb2
-      Hourly: ami-1183ba07
-      BYOL: ami-e582bbf3
-      OGWAMI: ami-bd889cab
+      AmazonAMI: ami-97785bed
+      OGWAMI: ami-4e761c34
+      Hourly: ami-b0920eca
+      BYOL: ami-d1910dab	  
       ARN: aws
       QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     us-east-2:
-      AmazonAMI: ami-8a7859ef
-      OGWAMI: ami-0a8fae6f
-      Hourly: ami-e60d2c83
-      BYOL: ami-a10c2dc4
+      AmazonAMI: ami-f63b1193
+      OGWAMI: ami-d86c44bd
+      Hourly: ami-dd634ab8
+      BYOL: ami-6c654c09
       ARN: aws
       QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     us-gov-west-1:
-      AmazonAMI: ami-899412e8
-      OGWAMI: ami-d0f475b1
-      Hourly: ami-b35adcd2
-      BYOL: ami-b35adcd2
+      AmazonAMI: ami-56f87137
+      OGWAMI: ami-ae65eacf
+      Hourly: ami-6fb23e0e
+      BYOL: ami-6fb23e0e
       ARN: aws-us-gov
       QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     us-west-1:
-      AmazonAMI: ami-327f5352
-      OGWAMI: ami-8582ace5
-      Hourly: ami-915f70f1
-      BYOL: ami-4c5f702c
+      AmazonAMI: ami-824c4ee2
+      OGWAMI: ami-2d6f6b4d
+      Hourly: ami-5dba813d
+      BYOL: ami-5cba813c
       ARN: aws
       QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     us-west-2:
-      AmazonAMI: ami-6df1e514
-      OGWAMI: ami-f20c128b
-      Hourly: ami-b10b1bc8
-      BYOL: ami-6e091917
+      AmazonAMI: ami-f2d3638a
+      OGWAMI: ami-bd65c3c5
+      Hourly: ami-9fab72e7
+      BYOL: ami-86aa73fe
       ARN: aws
       QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
