@@ -11,7 +11,7 @@ Description: >
 
 Parameters:
   ApplicationVPCRange:
-    Description: Please provide a CIDR block to be used by the Applicatoin VPC.  The Application VPC will host your application servers and Sophos OGW instances.
+    Description: Please provide a CIDR block to be used by the Application VPC.  The Application VPC will host your application servers and Sophos OGW instances.
     Type: String
     Default: 10.100.0.0/16
     AllowedPattern: ^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(/([0-9]|[1-2][0-9]|3[0-2]))$
