@@ -42,25 +42,8 @@ Parameters:
     ConstraintDescription: 'Must be IPv4 CIDR notation: X.X.X.X/X'
   OGWInstanceSize:
     Type: String
-    AllowedValues:
-      - c4.large
-      - c4.xlarge
-      - c4.2xlarge
-      - c4.4xlarge
-      - c4.8xlarge
-      - c3.large
-      - c3.xlarge
-      - c3.2xlarge
-      - c3.4xlarge
-      - c3.8xlarge
-      - m4.large
-      - m4.xlarge
-      - m4.2xlarge
-      - m4.4xlarge
-      - m4.10xlarge
-      - m4.16xlarge
     Default: c4.large
-    Description: EC2 instance type for OGWs, outbound Gateways launched in application VPCs.  Default is c4.large.  Valid values c4.large and higher, c3.large and higher, m4.large and higher.
+    Description: EC2 instance type for OGWs, outbound Gateways launched in application VPCs.  Default is c4.large.  If c4.large is not available in your region, a similar EC2 instance type will be used.
   AuthToken:
     Description: AuthToken for API access. This token would be used as a shared secret for API
       communication between Outbound Gateways and the UTMs.  Alphunumeric value, 8 characters miniumum.
@@ -84,51 +67,15 @@ Parameters:
       - BYOL
     Default: Hourly
   utmControllerInstanceSize:
-    Description: The default EC2 instance type is c4.large. If c4.large is not available
+    Description: The default EC2 instance type is m4.large. If m4.large is not available
       in your region, a similar EC2 instance type will be used.
     Type: String
-    AllowedValues:
-      - default
-      - c4.large
-      - c4.xlarge
-      - c4.2xlarge
-      - c4.4xlarge
-      - c4.8xlarge
-      - c3.large
-      - c3.xlarge
-      - c3.2xlarge
-      - c3.4xlarge
-      - c3.8xlarge
-      - m4.large
-      - m4.xlarge
-      - m4.2xlarge
-      - m4.4xlarge
-      - m4.10xlarge
-      - m4.16xlarge
-    Default: default
+    Default: m4.large
   utmWorkerInstanceSize:
-    Description: The default EC2 instance type is c4.large. If c4.large is not available
+    Description: The default EC2 instance type is m4.large. If m4.large is not available
       in your region, a similar EC2 instance type will be used.
     Type: String
-    AllowedValues:
-      - default
-      - c4.large
-      - c4.xlarge
-      - c4.2xlarge
-      - c4.4xlarge
-      - c4.8xlarge
-      - c3.large
-      - c3.xlarge
-      - c3.2xlarge
-      - c3.4xlarge
-      - c3.8xlarge
-      - m4.large
-      - m4.xlarge
-      - m4.2xlarge
-      - m4.4xlarge
-      - m4.10xlarge
-      - m4.16xlarge
-    Default: default
+    Default: m4.large
   AvailabilityZones:
     Type: List<AWS::EC2::AvailabilityZone::Name>
     Description: Provide exactly TWO Availability Zones
