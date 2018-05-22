@@ -616,7 +616,7 @@ Mappings:
       AmazonAMI: ami-97785bed
       OGWAMI: ami-4e761c34
       Hourly: ami-b0920eca
-      BYOL: ami-d1910dab	  
+      BYOL: ami-d1910dab
       ARN: aws
       QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
