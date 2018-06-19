@@ -1,11 +1,17 @@
+# quickstart-sophos-outboundproxy
 ## Sophos Outbound Web Proxy on the AWS Cloud
 
-For additional information and step by step instructions please reference [the quick start guide for this solution](https://aws.amazon.com/quickstart/architecture/sophos-outbound-web-proxy/).
 
-### Overview
-This solution utilizes the Sophos UTM virtual appliance to provide a transparent outbound proxy for EC2 instances deployed in Amazon Virtual Private Cloud (VPC). In addition, it uses a Sophos feature called Outbound Gateway to extend the security of the solution to multiple VPCs.
+This Quick Start automatically deploys an outbound web filtering proxy on the Amazon Web Services (AWS) Cloud, using the Sophos Unified Threat Management (UTM) virtual appliance. The Quick Start also uses Sophos Outbound Gateway to extend security to multiple virtual private clouds (VPCs).
 
-AWS EC2 instances often require access to external resources such as software repositories and web services. Many organizations require restricting connections to the Internet to authorized web sites. Web filtering proxies are commonly used to enforce web policies for Internet access.
+Sophos UTM provides multiple security functions, including firewall, intrusion prevention (IPS), VPN, and web filtering. Sophos Outbound Gateway provides a distributed, fault-tolerant architecture to provide visibility, policy enforcement, and elastic scalability to outbound web traffic. 
 
-### Solution Diagram
-![](images/detailed-diagram.png)
+The Quick Start builds a cloud environment that enables you to whitelist AWS API calls without allowing internet access. You can also use this reference deployment to enable other proxy use cases with Sophos UTM. 
+
+![Quick Start architecture for Sophos outbound web proxy on AWS](https://d0.awsstatic.com/partner-network/QuickStart/datasheets/sophos-outbound-proxy-on-aws-architecture.png)
+
+For architectural details, best practices, step-by-step instructions, and customization options, see the 
+[deployment guide](https://fwd.aws/3WemV).
+
+To post feedback, submit feature ideas, or report bugs, use the **Issues** section of this GitHub repo.
+If you'd like to submit code for this Quick Start, please review the [AWS Quick Start Contributor's Kit](https://aws-quickstart.github.io/). 
