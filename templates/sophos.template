@@ -486,8 +486,7 @@ Parameters:
       - Zambia
       - Zimbabwe
   awsKeyName:
-    Description: All EC2 instances will use this keypair for SSH access
-    Description: Name of an existing EC2 KeyPair to enable SSH access.
+    Description: Name of an existing EC2 KeyPair to enable SSH access, All EC2 instances will use this keypair for SSH access
     Type: AWS::EC2::KeyPair::KeyName
   debugMode:
     Description: Enable debug logging on the UTM instances ("off" to disable; "on"
