@@ -1065,7 +1065,6 @@ Resources:
     Properties:
       GroupDescription: Group for the receivers of the ElasticLoadBalancer
       VpcId: !Ref 'VPC'
-      GroupDescription: Enable TCP access from trusted network
   QueenSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
