@@ -649,7 +649,7 @@ Mappings:
       QueenInstanceType: c4.large
       SwarmInstanceType: c4.large
     ap-southeast-2:
-      AmazonAMI: ami-0a10b2721688ce9d2
+      AmazonAMI: ami-09b42976632b27e9b
       OGWAMI: ami-094f46f1d48a9dec1
       Hourly: ami-058ef66bf58423e72
       BYOL: ami-014532b8ccf0a673c
