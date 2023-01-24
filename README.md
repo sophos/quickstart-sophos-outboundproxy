@@ -15,3 +15,8 @@ For architectural details, best practices, step-by-step instructions, and custom
 
 To post feedback, submit feature ideas, or report bugs, use the **Issues** section of this GitHub repo.
 If you'd like to submit code for this Quick Start, please review the [AWS Quick Start Contributor's Kit](https://aws-quickstart.github.io/). 
+
+# Project archive:
+
+This repository has been formally archived, the project supporting it has been closed and no future updates will be made.
+The code will remain available for a period of time until and unless the owner decides to withdraw it.
